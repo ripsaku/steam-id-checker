@@ -28,4 +28,16 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 5. Select name, icon/pfp, and channel (this is where you're gonna receive the messages)
 6. Copy Webhook URL and put it on the program.
 
+### How to set-up Telegram BOT Api?
+#### Getting BOT API Token
+1. Start @BotFather
+2. Create a new bot or use an existing one.
+3. Get Token (you get it when you create the bot. Or use /mybots, select the Bot and click on API Token)
+4. Copy Token and paste into the program when solicited.
+
+#### Getting your Chat ID
+1. Start @RawDataBot
+2. In the middle you'll see "chat" and under that "id:"
+3. Copy ChatID and paste into the program when solicited.
+
 <!-- eternal -->
