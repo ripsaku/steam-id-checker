@@ -7,6 +7,7 @@ import tkinter as tk
 from tkinter import filedialog
 import ctypes
 import datetime
+import json
 
 def set_console_title(title):
     ctypes.windll.kernel32.SetConsoleTitleW(title)
@@ -43,8 +44,9 @@ console.print(f"""\n\n
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 \n""", style="purple")
 
-console.print(f"[bold magenta][1][/bold magenta][magenta] Webhook (results through Discord messages)[/magenta]")
-console.print(f"[bold magenta][2][/bold magenta][magenta] No webhook (results exported into .txt)[/magenta]")
+console.print(f"[bold magenta][0][/bold magenta][magenta] No webhook (results exported into .txt)[/magenta]")
+console.print(f"[bold magenta][1][/bold magenta][magenta] Discord Webhook (results through Discord messages)[/magenta]")
+console.print(f"[bold magenta][2][/bold magenta][magenta] Telegram Bot Api (results through Telegram messages)[/magenta]")
 console.print(f"[bold magenta]Choose mode: [/bold magenta]", end="")
 
 modo = input()
@@ -59,7 +61,16 @@ if modo == '1':
     exit()
 
 elif modo == '2':
-    pass
+    console.print(f"[bold magenta] Token: [/bold magenta]", end="")
+    TOKENTELEGRAM = input()
+
+    console.print(f"[bold magenta] ChatID: [/bold magenta]", end="")
+    CHAT_IDTELEGRAM = input()
+
+    urlTelegram = f"https://api.telegram.org/bot{TOKENTELEGRAM}/sendMessage"
+
+elif modo == '0':
+    pass    
 
 else:
     console.print("Error: Invalid mode", style="red")
@@ -131,6 +142,18 @@ for palabra in palabras_a_probar:
             if modo == '1':
                 requests.post(webhook, data={"content" : f"\🌠 New ID available `{palabra}` \n remember **it can be banned** or **blacklisted.** >.<\n`--------------------------------`"})
             elif modo == '2':
+                try:
+                    response = requests.post(
+                        urlTelegram,
+                        json={
+                            "chat_id": CHAT_IDTELEGRAM,
+                            "text": f"🌠 New ID available {palabra} \n remember it can be banned or blacklisted. >.<"
+                        }
+                    )
+                    response.raise_for_status()
+                except requests.exceptions.RequestException as e:
+                    console.print(f"[bold red]Error sending message:[/bold red] {e}")
+            elif modo == '0':
                 pass                 
         else:
             console.print(f'\r[bold red]{palabra}[/bold red] IS NOT AVAILABLE')
