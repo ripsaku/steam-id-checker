@@ -10,6 +10,8 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 - Easy to use
 - Open-source
 - Discord webhook support
+- Telegram Webhook/Bot support
+- Real-time results saving
 
 ### Prerequisites
 - [Python](https://www.python.org/downloads/)
