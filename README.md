@@ -2,42 +2,53 @@
   Steam ID Checker
 </h1>
 
-<h2 align="center">
-This project is licensed under the MIT License. See the LICENSE file for more details.
-</h2>
+<p align="center">
+  An easy-to-use and open-source tool to check the validity of Steam IDs with real-time notification support via Discord and Telegram.
+</p>
 
-### Features
-- Easy to use
-- Open-source
-- Discord webhook support
-- Telegram Webhook/Bot support
-- Real-time results saving
+<p align="center">
+  This project is licensed under the <a href="LICENSE">MIT License</a>. See the LICENSE file for more details.
+</p>
+
+### Key Features
+
+* **Easy to Use:** Intuitive interface for quick verification.
+* **Open-Source:** Transparency and the possibility to contribute to the project.
+* **Discord Webhook Support:** Receive real-time results directly in your Discord channels.
+* **Telegram Bot/Webhook Support:** Get notifications via Telegram, either through a Bot or Webhook.
+* **Real-time Results Saving:** Verification results are automatically saved as they are processed.
 
 ### Prerequisites
-- [Python](https://www.python.org/downloads/)
 
-### How to install/use?
-1. Go to [Releases](https://github.com/ripsaku/steam-id-checker/releases) and download the latest version available.
-2. Open the .exe file.
-3. Enter your Discord webhook URL.
-4. Select a list (.txt) file.
+* [Python](https://www.python.org/downloads/) installed on your system.
 
-### How to set up a Discord webhook?
-1. Go to Discord.
-2. Create a new server (or use an existing one, but you'll need the "Manage Webhooks" permission).
-3. Go to Server Settings > Webhooks.
-4. Create a new webhook.
-5. Choose a name, icon/profile picture, and channel (this is where you will receive the messages).
-6. Copy the Webhook URL and paste it into the program.
+### How to Install and Use?
 
-### How to set up a Telegram BOT API?
-#### Getting your BOT API Token
-1. Start a chat with @BotFather on Telegram.
-2. Create a new bot or use an existing one.
-3. Get the token (you'll receive it when you create a new bot. Alternatively, use the `/mybots` command, select your bot, and click on "API Token").
-4. Copy the token and paste it into the program when prompted.
+1.  Go to the [Releases](https://github.com/ripsaku/steam-id-checker/releases) section and download the latest available version of the program.
+2.  Open the downloaded `.exe` file.
+3.  Enter your Discord webhook URL when prompted (optional).
+4.  Select the text file (`.txt`) containing the list of Steam IDs you want to check.
 
-#### Getting your Chat ID
-1. Start a chat with @RawDataBot on Telegram.
-2. In the middle of the message, you'll see "chat" and below it "id:".
-3. Copy the Chat ID and paste it into the program when prompted.
+### How to Set Up a Discord Webhook?
+
+1.  Open Discord in your browser or desktop application.
+2.  Create a new server or use an existing one (you'll need the "Manage Webhooks" permission).
+3.  Go to **Server Settings** > **Webhooks**.
+4.  Click on **Create Webhook**.
+5.  Choose a name for the webhook, an avatar (profile picture), and the channel where you want to receive messages.
+6.  Copy the provided **Webhook URL** and paste it into the program when prompted.
+
+### How to Set Up a Telegram Bot API?
+
+#### Getting Your Bot API Token
+
+1.  Start a chat with [@BotFather](https://t.me/BotFather) on Telegram.
+2.  Create a new bot or use an existing one.
+3.  Get the **Token**. You will receive it when creating a new bot. Alternatively, use the `/mybots` command, select your bot, and click on "API Token".
+4.  Copy the Token and paste it into the program when prompted.
+
+#### Getting Your Chat ID
+
+1.  Start a chat with [@RawDataBot](https://t.me/RawDataBot) on Telegram.
+2.  In the message it sends you, look for the "chat" section, and below it, you'll see "id:".
+3.  Copy the **Chat ID** and paste it into the program when prompted.
